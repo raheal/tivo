@@ -45,7 +45,9 @@ public class DownloadExecutor implements Runnable {
 		LOGGER.info("[{}] Processing request : {}", taskId, request);
 		try {
 			final String fileDownloadPath = downloadParentPath + "/" + taskId;
-			runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , pythonInterpreterPath, "no-op.py", fileDownloadPath}), workingDirectory, taskId);
+			//runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , pythonInterpreterPath, "no-op.py", fileDownloadPath}), workingDirectory, taskId);
+
+			runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , pythonInterpreterPath, "TivoGenericAdapter.py", "\"" + request.getUrl() + "\"", downloadParentPath, String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())}), workingDirectory, taskId);
 		} catch(IOException | InterruptedException e) {
 			LOGGER.error(e.getMessage(), e);
 			GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, e.getMessage(), request);

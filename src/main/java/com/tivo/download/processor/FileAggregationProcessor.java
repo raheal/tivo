@@ -1,6 +1,9 @@
 package com.tivo.download.processor;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
@@ -23,8 +26,8 @@ public class FileAggregationProcessor implements Processor {
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {
 		LOGGER.info("[{}] Run the FileAggregationProcessor : {}", taskId);
 		try {
-			final String fileDownloadPath = downloadConfigDto.getDownloadParentPath() + "/" + taskId;
-			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "no-op.py", downloadConfigDto.getDownloadParentPath()}), downloadConfigDto.getScriptDirectory(), taskId, request);
+			final String fileDownloadPathString = downloadConfigDto.getDownloadParentPath() + "/" + taskId;
+			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "no-op.py", fileDownloadPathString}), downloadConfigDto.getScriptDirectory(), taskId, request);
 			if (result == 0) {
 				GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME);
 				if (processor != null) {

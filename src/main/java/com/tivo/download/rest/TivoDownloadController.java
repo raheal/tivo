@@ -3,6 +3,7 @@ package com.tivo.download.rest;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.tivo.download.service.DownloadService;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
 public class TivoDownloadController {
 
 	@Autowired

@@ -31,9 +31,8 @@ public class DownloadStreamProcessor implements Processor{
 			if (!Files.exists(fileDownloadPath)) {
 				Files.createDirectories(fileDownloadPath);				
 			}
-			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "no-op.py", fileDownloadPathString}), downloadConfigDto.getScriptDirectory(), taskId, request);
+			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoGenericAdapter.py", "\"" + request.getUrl() + "\"", fileDownloadPathString, String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())}), downloadConfigDto.getScriptDirectory(), taskId, request);
 			if (result == 0) {
-				//GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoGenericAdapter.py", "\"" + request.getUrl() + "\"", downloadConfigDto.getDownloadParentPath(), String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())}), downloadConfigDto.getScriptDirectory(), taskId, request);
 				GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME);
 				if (processor != null) {
 					processor.process(request, downloadConfigDto, taskId);

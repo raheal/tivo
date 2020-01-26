@@ -2,17 +2,19 @@ package com.tivo.download.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import org.apache.tomcat.util.buf.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.Status;
+import com.tivo.download.processor.DownloadStreamProcessor;
+import com.tivo.download.processor.FileAggregationProcessor;
+import com.tivo.download.processor.FileStreamProcessor;
+import com.tivo.download.processor.Processor;
 
 public class DownloadExecutor implements Runnable {
 
@@ -20,58 +22,29 @@ public class DownloadExecutor implements Runnable {
 	
 	private DownloadRequestDto request;
 	
-	private String workingDirectory;
-	
 	private String taskId;
 	
-	private String pythonInterpreterPath;
+	private DownloadConfigDto downloadConfigDto;
 	
-	private String downloadParentPath;
-	
-	public DownloadExecutor(final DownloadRequestDto request, final String workingDirectory, final String taskId, final String pythonInterpreterPath, final String downloadParentPath) {
+	public DownloadExecutor(final DownloadRequestDto request, final String taskId, final DownloadConfigDto downloadConfigDto) {
 		this.request = request;
-		this.workingDirectory = workingDirectory;
 		this.taskId = taskId;
-		this.pythonInterpreterPath = pythonInterpreterPath;
-		this.downloadParentPath = downloadParentPath;
+		this.downloadConfigDto = downloadConfigDto;
 	}
 	
 	@Override
 	public void run() {
-		downloadStreamData(request, workingDirectory, taskId, pythonInterpreterPath, downloadParentPath);
+		downloadStreamData(request,  taskId, downloadConfigDto);
 	}
 	
-	public void downloadStreamData(DownloadRequestDto request, String workingDirectory, String taskId, String pythonInterpreterPath, String downloadParentPath)  {
+	public void downloadStreamData(DownloadRequestDto request, String taskId, DownloadConfigDto downloadLoadConfig)  {
 		LOGGER.info("[{}] Processing request : {}", taskId, request);
-		try {
-			final String fileDownloadPath = downloadParentPath + "/" + taskId;
-			//runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , pythonInterpreterPath, "no-op.py", fileDownloadPath}), workingDirectory, taskId);
-
-			runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , pythonInterpreterPath, "TivoGenericAdapter.py", "\"" + request.getUrl() + "\"", downloadParentPath, String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())}), workingDirectory, taskId);
-		} catch(IOException | InterruptedException e) {
-			LOGGER.error(e.getMessage(), e);
-			GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, e.getMessage(), request);
-		}
-		return;
+		final Processor downloadStreamProcessor = new DownloadStreamProcessor();
+		final Processor fileStreamProcessor = new FileStreamProcessor();
+		final Processor fileAggregationProcessor = new FileAggregationProcessor();
+		downloadStreamProcessor.setNextProcessor(fileStreamProcessor);
+		fileStreamProcessor.setNextProcessor(fileAggregationProcessor);
+		downloadStreamProcessor.process(request, downloadLoadConfig, taskId);	
 	}
-	
-	
-	
-	private void runProcessBuilder(final List<String> cmdArguments, final String directory, final String taskId) throws IOException, InterruptedException {
-		LOGGER.info("[{}] Running command : [{}]", taskId, StringUtils.join(cmdArguments));
-		final ProcessBuilder processBuilder = new ProcessBuilder();
-		processBuilder.command(cmdArguments);
-		processBuilder.directory(new File(directory));
-		final Process process = processBuilder.start();
-		final int exitValue = process.waitFor();
-		if (exitValue == 1) {
-			GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, "Failed Execution", request);
-		} else {
-			GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, "Successful Execution", request);
-		}
-	}
-	
-	
-	
-	
+		
 }

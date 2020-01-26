@@ -1,7 +1,7 @@
 package com.tivo.download.service;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public class DownloadRecordCache {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DownloadRecordCache.class);
 	
-	private final Map<String, DownloadStatusDto> cache = new ConcurrentHashMap<>();
+	private final Map<String, DownloadStatusDto> cache = new LinkedHashMap<>();
 	
 	private static DownloadRecordCache instance;
 	

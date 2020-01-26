@@ -1,5 +1,7 @@
 package com.tivo.download.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +13,12 @@ public class DownloadStatusDto {
 	
 	private String id;
 
+	private String stage;
+	
 	private Status status;
 	
 	private String statusMessage;
+	
+	private LocalDateTime timestamp;
 	
 }

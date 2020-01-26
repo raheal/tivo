@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
 
 @Service
@@ -49,7 +50,7 @@ public class DownloadServiceImpl implements DownloadService{
 	
 	@Override
 	public void downloadStreamData(DownloadRequestDto request, String taskId)  {
-		executorService.submit(new DownloadExecutor(request, scriptWorkingDirectory, taskId, pythonInterpreterPath, downloadParentPath));
+		executorService.submit(new DownloadExecutor(request, taskId, new DownloadConfigDto(downloadParentPath, pythonInterpreterPath, scriptWorkingDirectory)));
 	}
 
 	@Override

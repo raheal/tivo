@@ -2,10 +2,12 @@ package com.tivo.download.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.tomcat.util.buf.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +42,8 @@ public class GeneralUtils {
 		processBuilder.command(cmdArguments);
 		processBuilder.directory(new File(directory));
 		final Process process = processBuilder.start();
+		final String processOutput = IOUtils.toString(process.getInputStream(), StandardCharsets.UTF_8);
+		LOGGER.info("[{}]\n" + processOutput, taskId);
 		final int exitValue = process.waitFor();
 		return exitValue;
 	}

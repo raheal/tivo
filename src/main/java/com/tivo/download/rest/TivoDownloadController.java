@@ -13,6 +13,7 @@ import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.DownloadRequestStatusDto;
 import com.tivo.download.dto.Status;
 import com.tivo.download.service.DownloadService;
+import com.tivo.download.service.GeneralUtils;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -29,6 +30,7 @@ public class TivoDownloadController {
 		requestStatus.setRequest(request);
 		requestStatus.setStatus(Status.STARTED);
 		requestStatus.setTaskId(taskId);
+		GeneralUtils.createDownloadStatusRecord(taskId, Status.NOT_STARTED, "Download request submitted", request, "On Boarding");
 		downloadService.downloadStreamData(request, taskId);
 		return requestStatus;
 	}

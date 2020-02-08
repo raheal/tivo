@@ -19,5 +19,7 @@ public class DownloadRequestDto {
 	
 	private Boolean isStream;
 	
+	private String mediaMetadata;
+	
 	
 }

@@ -22,6 +22,8 @@ public class DownloadStreamProcessor implements Processor{
 	
 	private static final String PROCESSOR_NAME = "Downloading data";
 	
+	private static final String EVENT_NAME = "event.servive.tivo.download.stream";
+	
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {
 		LOGGER.info("[{}] Run the DownloadStreamProcessor : {}", taskId);
@@ -33,16 +35,16 @@ public class DownloadStreamProcessor implements Processor{
 			}
 			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoGenericAdapter.py", "\"" + request.getUrl() + "\"", fileDownloadPathString, String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())}), downloadConfigDto.getScriptDirectory(), taskId, request);
 			if (result == 0) {
-				GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME);
+				GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 				if (processor != null) {
 					processor.process(request, downloadConfigDto, taskId);
 				}
 			} else {
-				GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, "Error code = 1", request, PROCESSOR_NAME);
+				GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, "Error code = 1", request, PROCESSOR_NAME, EVENT_NAME);
 			}
 		} catch(IOException | InterruptedException e) {
 			LOGGER.error(e.getMessage(), e);
-			GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, e.getMessage(), request, PROCESSOR_NAME);
+			GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, e.getMessage(), request, PROCESSOR_NAME, EVENT_NAME);
 		}	
 	}
 

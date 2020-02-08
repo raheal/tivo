@@ -23,7 +23,7 @@ public class GeneralUtils {
 	public static final String BLANK_LITERAL = "";
 	
 	
-	public static final DownloadStatusDto createDownloadStatusRecord(String taskId, Status status, String statusMessage, DownloadRequestDto request, String stage) {
+	public static final DownloadStatusDto createDownloadStatusRecord(String taskId, Status status, String statusMessage, DownloadRequestDto request, String stage, String event) {
 		final DownloadStatusDto downloadStatus = new DownloadStatusDto();
 		downloadStatus.setId(taskId);
 		downloadStatus.setRequest(request);
@@ -31,7 +31,9 @@ public class GeneralUtils {
 		downloadStatus.setStatusMessage(statusMessage);
 		downloadStatus.setStage(stage);
 		downloadStatus.setTimestamp(LocalDateTime.now());
-		DownloadRecordCache.getInstance().getCache().put(UUID.randomUUID().toString(), downloadStatus);
+		downloadStatus.setEvent(event);
+		DownloadLogCache.getInstance().getCache().put(UUID.randomUUID().toString(), downloadStatus);
+		DownloadStatusCache.getInstance().getCache().put(taskId, downloadStatus);
 		return downloadStatus;
 	}
 	

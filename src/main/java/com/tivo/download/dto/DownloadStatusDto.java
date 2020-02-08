@@ -2,11 +2,14 @@ package com.tivo.download.dto;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@JsonIgnoreProperties("event")
 public class DownloadStatusDto {
 
 	private DownloadRequestDto request;
@@ -20,5 +23,7 @@ public class DownloadStatusDto {
 	private String statusMessage;
 	
 	private LocalDateTime timestamp;
+	
+	private String event;
 	
 }

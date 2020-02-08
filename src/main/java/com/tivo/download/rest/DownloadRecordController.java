@@ -8,16 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tivo.download.dto.DownloadStatusDto;
-import com.tivo.download.service.DownloadRecordCache;
+import com.tivo.download.service.DownloadLogCache;
+import com.tivo.download.service.DownloadStatusCache;
 
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/download")
 @RestController
 @CrossOrigin
 public class DownloadRecordController {
 
-	@GetMapping("/record")
-	public Map<String, DownloadStatusDto> getDownloadRecords() {
-		return DownloadRecordCache.getInstance().getCache();
+	@GetMapping("/log")
+	public Map<String, DownloadStatusDto> getDownloadLogs() {
+		return DownloadLogCache.getInstance().getCache();
+	}
+	
+	@GetMapping("/status/all")
+	public Map<String, DownloadStatusDto> getDownloadStatuses() {
+		return DownloadStatusCache.getInstance().getCache();
 	}
 	
 }

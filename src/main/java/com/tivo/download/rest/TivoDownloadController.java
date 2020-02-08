@@ -23,6 +23,8 @@ public class TivoDownloadController {
 	@Autowired
 	private DownloadService downloadService;
 	
+	private static final String EVENT_NAME = "event.service.tivo.download.request";
+	
 	@PostMapping("/download")
 	public DownloadRequestStatusDto download(@RequestBody DownloadRequestDto request) {
 		final String taskId = UUID.randomUUID().toString();
@@ -30,7 +32,7 @@ public class TivoDownloadController {
 		requestStatus.setRequest(request);
 		requestStatus.setStatus(Status.STARTED);
 		requestStatus.setTaskId(taskId);
-		GeneralUtils.createDownloadStatusRecord(taskId, Status.NOT_STARTED, "Download request submitted", request, "On Boarding");
+		GeneralUtils.createDownloadStatusRecord(taskId, Status.NOT_STARTED, "Download request submitted", request, "On Boarding", EVENT_NAME);
 		downloadService.downloadStreamData(request, taskId);
 		return requestStatus;
 	}

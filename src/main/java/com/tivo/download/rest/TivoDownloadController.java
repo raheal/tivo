@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,9 @@ public class TivoDownloadController {
 	@Autowired
 	private EventService eventService;
 	
+	@Autowired
+	private SimpMessagingTemplate template;
+	
 	private static final String EVENT_NAME = "event.service.tivo.download.request";
 	
 	@PostMapping("/download")
@@ -46,6 +50,7 @@ public class TivoDownloadController {
 		requestStatus.setTaskId(taskId);
 		logDownloadRequest(eventService, taskId, request);
 		downloadService.downloadStreamData(request, taskId);
+		template.convertAndSend("/topic/messages", "Sending a message");
 		return requestStatus;
 	}
 	

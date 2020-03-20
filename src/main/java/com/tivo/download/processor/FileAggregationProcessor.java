@@ -29,8 +29,7 @@ public class FileAggregationProcessor implements Processor {
 		LOGGER.info("[{}] Run the FileAggregationProcessor", taskId);
 		GeneralUtils.createDownloadStatusRecord(taskId, Status.IN_PROGRESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 		try {
-			final String fileDownloadPathString = downloadConfigDto.getDownloadParentPath() + "/" + taskId;
-			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoFileGenerator.py", fileDownloadPathString, request.getOutputFileName()}), downloadConfigDto.getScriptDirectory(), taskId, request);
+			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoFileGenerator.py", request.getFileDownloadDirectory(), request.getOutputFileName()}), downloadConfigDto.getScriptDirectory(), taskId, request);
 			if (result == 0) {
 				GeneralUtils.createDownloadStatusRecord(taskId, Status.SUCCESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 				if (processor != null) {

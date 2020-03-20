@@ -15,4 +15,6 @@ public class DownloadConfigDto {
 	
 	private String scriptDirectory;
 	
+	private String libraryPath;
+	
 }

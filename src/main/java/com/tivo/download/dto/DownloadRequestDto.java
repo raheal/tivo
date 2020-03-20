@@ -21,5 +21,7 @@ public class DownloadRequestDto {
 	
 	private String mediaMetadata;
 	
+	private String fileDownloadDirectory;
+	
 	
 }

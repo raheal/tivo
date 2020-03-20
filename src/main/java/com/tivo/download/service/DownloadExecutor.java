@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.Status;
+import com.tivo.download.processor.CleanupProcessor;
 import com.tivo.download.processor.DownloadStreamProcessor;
 import com.tivo.download.processor.FileAggregationProcessor;
 import com.tivo.download.processor.FileStreamProcessor;
@@ -38,13 +39,20 @@ public class DownloadExecutor implements Runnable {
 	}
 	
 	public void downloadStreamData(DownloadRequestDto request, String taskId, DownloadConfigDto downloadLoadConfig)  {
+		
+		// set the download path to the request for further reference in the chain of responsibity pattern.
+		request.setFileDownloadDirectory( downloadConfigDto.getDownloadParentPath() + "/" + taskId);
+		
 		LOGGER.info("[{}] Processing request : {}", taskId, request);
 		final Processor downloadStreamProcessor = new DownloadStreamProcessor();
 		final Processor fileStreamProcessor = new FileStreamProcessor();
 		final Processor fileAggregationProcessor = new FileAggregationProcessor();
+		final Processor cleanupProcessor = new CleanupProcessor();
 		downloadStreamProcessor.setNextProcessor(fileStreamProcessor);
 		fileStreamProcessor.setNextProcessor(fileAggregationProcessor);
+		fileAggregationProcessor.setNextProcessor(cleanupProcessor);
 		downloadStreamProcessor.process(request, downloadLoadConfig, taskId);	
+		
 	}
 		
 }

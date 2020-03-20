@@ -27,6 +27,7 @@ public class DownloadStreamProcessor implements Processor{
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {
 		LOGGER.info("[{}] Run the DownloadStreamProcessor", taskId);
+		GeneralUtils.createDownloadStatusRecord(taskId, Status.IN_PROGRESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 		try {
 			final String fileDownloadPathString = downloadConfigDto.getDownloadParentPath() + "/" + taskId;
 			final Path fileDownloadPath = Paths.get(fileDownloadPathString);

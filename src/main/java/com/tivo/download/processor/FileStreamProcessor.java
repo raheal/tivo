@@ -24,6 +24,7 @@ public class FileStreamProcessor implements Processor{
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {
 		LOGGER.info("[{}] Run the FileStreamProcessor", taskId);
+		GeneralUtils.createDownloadStatusRecord(taskId, Status.IN_PROGRESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 		try {
 			final String fileDownloadPathString = downloadConfigDto.getDownloadParentPath() + "/" + taskId;
 			final Integer result = GeneralUtils.runProcessBuilder(Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), "TivoUtils.py", fileDownloadPathString}), downloadConfigDto.getScriptDirectory(), taskId, request);

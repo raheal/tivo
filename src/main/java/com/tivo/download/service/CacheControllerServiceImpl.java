@@ -1,5 +1,6 @@
 package com.tivo.download.service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,9 +20,9 @@ import com.tivo.download.dto.DownloadStatusDto;
 import com.tivo.download.dto.Status;
 
 @Component
-public class StreamUpdateServiceImpl implements StreamUpdateService{
+public class CacheControllerServiceImpl implements CacheControllerService{
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(StreamUpdateServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CacheControllerServiceImpl.class);
 	
 	private ScheduledExecutorService scheduledExecutorService;
 	
@@ -50,7 +51,6 @@ public class StreamUpdateServiceImpl implements StreamUpdateService{
 			scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 				@Override
 				public void run() {
-					LOGGER.info("Running scheduler");
 					try {
 						updateFileStreamProgress();
 					} catch (IOException e) {
@@ -81,14 +81,26 @@ public class StreamUpdateServiceImpl implements StreamUpdateService{
 	private void updateFileStreamProgress() throws IOException{
 		for (DownloadStatusDto statusDto : DownloadStatusCache.getInstance().getCache().values()) {
 			if (statusDto.getStatus() == Status.IN_PROGRESS) {
-				Long fileCount = Files.list(Paths.get(statusDto.getRequest().getFileDownloadDirectory())).count();
-				statusDto.setStatusMessage(String.valueOf(fileCount).concat(" file(s) downloaded"));
+				int count = new File(statusDto.getRequest().getFileDownloadDirectory()).listFiles().length;
+				statusDto.setStatusMessage(String.valueOf(count).concat(" file(s) downloaded"));
 			}
 		}
 	}
 
 	public boolean isCacheUpdate() {
 		return cacheUpdate;
+	}
+
+	@Override
+	public boolean clearDownloadLogCache() {
+		DownloadLogCache.getInstance().getCache().clear();
+		return (DownloadLogCache.getInstance().getCache().size() ==0) ? true : false;
+	}
+
+	@Override
+	public boolean clearDownloadStatusCache() {
+		DownloadStatusCache.getInstance().getCache().clear();
+		return (DownloadStatusCache.getInstance().getCache().size() == 0) ? true : false;
 	}
 
 	

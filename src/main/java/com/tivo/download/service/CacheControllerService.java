@@ -1,6 +1,6 @@
 package com.tivo.download.service;
 
-public interface StreamUpdateService {
+public interface CacheControllerService {
 
 	void turnOnStreamUpdate();
 	
@@ -8,5 +8,8 @@ public interface StreamUpdateService {
 	
 	boolean isStreamUpdateOn();
 	
+	boolean clearDownloadLogCache();
+	
+	boolean clearDownloadStatusCache();
 	
 }

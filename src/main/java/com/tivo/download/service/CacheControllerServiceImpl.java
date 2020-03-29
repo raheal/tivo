@@ -103,5 +103,14 @@ public class CacheControllerServiceImpl implements CacheControllerService{
 		return (DownloadStatusCache.getInstance().getCache().size() == 0) ? true : false;
 	}
 
+
+	@Override
+	public boolean deleteEntry(String taskId) {
+		final DownloadStatusDto downloadStatusDto = DownloadStatusCache.getInstance().getCache().get(taskId);
+		downloadStatusDto.setStatus(Status.DELETED);
+		return true;
+	}
+
+	
 	
 }

@@ -8,6 +8,7 @@ public enum Status {
 	SEVERE,
 	IN_PROGRESS,
 	STARTED,
-	ABORTED
+	ABORTED,
+	DELETED
 }
 

@@ -1,13 +1,17 @@
 package com.tivo.download.rest;
 
+import java.io.File;
 import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +25,7 @@ import com.tivo.download.dto.EventBuilder;
 import com.tivo.download.dto.Status;
 import com.tivo.download.service.DownloadService;
 import com.tivo.download.service.EventService;
+import com.tivo.download.service.FileService;
 import com.tivo.download.service.GeneralUtils;
 
 @RestController
@@ -35,6 +40,7 @@ public class TivoDownloadController {
 	
 	@Autowired
 	private EventService eventService;
+
 	
 	@Autowired
 	private SimpMessagingTemplate template;
@@ -54,6 +60,8 @@ public class TivoDownloadController {
 		return requestStatus;
 	}
 	
+
+	
 	private void logDownloadRequest(final EventService eventService, final String taskId, final DownloadRequestDto request) {
 		GeneralUtils.createDownloadStatusRecord(taskId, Status.NOT_STARTED, "Download request submitted", request, "On Boarding", EVENT_NAME);
 		try {
@@ -63,5 +71,7 @@ public class TivoDownloadController {
 			LOGGER.error(e.getMessage(), e);
 		}
 	}
+	
+	
 	
 }

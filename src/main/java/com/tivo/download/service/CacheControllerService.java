@@ -12,4 +12,6 @@ public interface CacheControllerService {
 	
 	boolean clearDownloadStatusCache();
 	
+	boolean deleteEntry(final String taskId);
+	
 }

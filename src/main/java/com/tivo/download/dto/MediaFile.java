@@ -1,5 +1,7 @@
 package com.tivo.download.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +13,12 @@ public class MediaFile {
 	
 	private String name;
 	
-	private String size;
+	private Long size;
+	
+	private LocalDateTime creationDate;
+	
+	private String fileExtension;
+	
+	private String duration;
 		
 }

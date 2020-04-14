@@ -25,7 +25,6 @@ import com.tivo.download.dto.EventBuilder;
 import com.tivo.download.dto.Status;
 import com.tivo.download.service.DownloadService;
 import com.tivo.download.service.EventService;
-import com.tivo.download.service.FileService;
 import com.tivo.download.service.GeneralUtils;
 
 @RestController
@@ -49,7 +48,7 @@ public class TivoDownloadController {
 	
 	@PostMapping("/download")
 	public DownloadRequestStatusDto download(@RequestBody DownloadRequestDto request) {
-		final String taskId = UUID.randomUUID().toString();
+		final String taskId = (request.isResumeDownload() ? request.getTaskId() : UUID.randomUUID().toString());
 		final DownloadRequestStatusDto requestStatus = new DownloadRequestStatusDto();
 		requestStatus.setRequest(request);
 		requestStatus.setStatus(Status.STARTED);

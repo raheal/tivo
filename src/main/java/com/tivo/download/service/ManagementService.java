@@ -6,8 +6,9 @@ import com.tivo.download.dto.MediaFile;
 
 public interface ManagementService {
 
-	Boolean deleteDownloadDirectory(final String taskId);
 	
-	List<MediaFile> listMediaFiles(final String taskId);
+	List<MediaFile> listMediaFilesInDownloadFolder(final String taskId);
+	
+	List<MediaFile> listMediaFilesInLibraryFolder();
 	
 }

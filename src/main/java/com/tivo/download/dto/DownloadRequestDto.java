@@ -23,5 +23,11 @@ public class DownloadRequestDto {
 	
 	private String fileDownloadDirectory;
 	
+	private String taskId;
+	
+	private boolean resumeDownload;
+	
+	private ProcessingPlan processingPlan;
+	
 	
 }

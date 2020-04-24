@@ -8,7 +8,7 @@ public class EventBuilder {
 	
 	private String eventPayload;
 	
-	private LocalDateTime eventLogTime;
+	private String serviceName;
 	
 	public EventBuilder() {}
 	
@@ -22,10 +22,16 @@ public class EventBuilder {
 		return this;
 	}
 	
+	public EventBuilder setServiceName(final String serviceName) {
+		this.serviceName = serviceName;
+		return this;
+	}
+	
 	public Event build() {
 		final Event event = new Event();
 		event.setEventName(eventName);
 		event.setPayload(eventPayload);
+		event.setServiceName(serviceName);
 		event.setEventTime(LocalDateTime.now());
 		return event;
 	}

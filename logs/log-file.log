@@ -1,0 +1,62 @@
+2020-04-24 16:49:07.112  INFO 31508 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 31508 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 16:49:07.114  INFO 31508 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 16:49:08.007  INFO 31508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 16:49:08.012  INFO 31508 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 16:49:08.017  INFO 31508 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 16:49:08.067  INFO 31508 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 16:49:08.067  INFO 31508 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 915 ms
+2020-04-24 16:49:08.267  INFO 31508 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 16:49:08.267  INFO 31508 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 16:49:08.317  INFO 31508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 16:49:08.317  INFO 31508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 16:49:08.347  INFO 31508 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 16:49:08.367  INFO 31508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-04-24 16:49:08.647  INFO 31508 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-24 16:49:08.667  INFO 31508 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-04-24 16:49:08.667  INFO 31508 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 16:49:08.667  INFO 31508 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-04-24 16:49:08.687  INFO 31508 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-24 16:49:08.698  INFO 31508 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 1.869 seconds (JVM running for 2.5)
+2020-04-24 16:49:52.617  INFO 31508 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-24 16:49:52.618  INFO 31508 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-24 16:49:52.622  INFO 31508 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-04-24 16:50:08.381  INFO 31508 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-04-24 16:55:24.802  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-24 16:55:24.811  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 16:55:24.812  INFO 31508 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown
+2020-04-24 16:56:04.334  INFO 23056 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 23056 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 16:56:04.334  INFO 23056 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 16:56:05.602  INFO 23056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 16:56:05.612  INFO 23056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 16:56:05.612  INFO 23056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 16:56:05.692  INFO 23056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 16:56:05.692  INFO 23056 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1328 ms
+2020-04-24 16:56:05.982  INFO 23056 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 16:56:05.982  INFO 23056 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 16:56:06.037  INFO 23056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 16:56:06.037  INFO 23056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 16:56:06.057  INFO 23056 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 16:56:06.082  INFO 23056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-04-24 16:56:06.347  INFO 23056 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-24 16:56:06.367  INFO 23056 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-04-24 16:56:06.367  INFO 23056 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 16:56:06.367  INFO 23056 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-04-24 16:56:06.457  INFO 23056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-24 16:56:06.458  INFO 23056 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.42 seconds (JVM running for 3.019)
+2020-04-24 16:56:56.682  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-24 16:56:56.685  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-04-24 16:56:56.685  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 16:56:56.685  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 16:56:56.692  INFO 23056 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown

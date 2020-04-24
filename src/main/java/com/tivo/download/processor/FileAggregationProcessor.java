@@ -22,7 +22,7 @@ public class FileAggregationProcessor implements Processor {
 	
 	private static final String PROCESSOR_NAME = "Aggregate data";
 	
-	private static final String EVENT_NAME = "event.servive.tivo.download.aggregate";
+	private static final String EVENT_NAME = "event.service.tivo.download.aggregate";
 	
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {

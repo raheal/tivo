@@ -17,4 +17,6 @@ public class Event {
 	
 	private LocalDateTime eventTime;
 	
+	private String serviceName;
+	
 }

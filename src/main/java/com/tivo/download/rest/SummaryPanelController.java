@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tivo.download.dto.MediaFile;
 import com.tivo.download.service.ManagementService;
 
+import io.micrometer.core.annotation.Timed;
+
 @RestController
 @RequestMapping("/api/v1/summary")
 public class SummaryPanelController {

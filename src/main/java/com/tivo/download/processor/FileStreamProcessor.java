@@ -19,7 +19,7 @@ public class FileStreamProcessor implements Processor{
 	
 	private static final String PROCESSOR_NAME = "Processing Data";
 	
-	private static final String EVENT_NAME = "event.servive.tivo.download.process";
+	private static final String EVENT_NAME = "event.service.tivo.download.process";
 	
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {

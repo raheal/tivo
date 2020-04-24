@@ -27,7 +27,7 @@ public class CleanupProcessor implements Processor{
 	
 	private static final String PROCESSOR_NAME = "Finalising Data";
 	
-	private static final String EVENT_NAME = "event.servive.tivo.download.finalise";
+	private static final String EVENT_NAME = "event.service.tivo.download.finalise";
 	
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto config, String taskId) {

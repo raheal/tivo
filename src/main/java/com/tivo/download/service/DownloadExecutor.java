@@ -38,12 +38,8 @@ public class DownloadExecutor implements Runnable {
 	}
 	
 	public void downloadStreamData(DownloadRequestDto request, String taskId, DownloadConfigDto downloadLoadConfig) throws ServiceException{
-		
-		// set the download path to the request for further reference in the chain of responsibility pattern.
 		request.setFileDownloadDirectory( downloadConfigDto.getDownloadParentPath() + "/" + taskId);
-		
 		LOGGER.info("[{}] Processing request : {}", taskId, request);
-	
 		final Processor downloadStreamProcessor = new DownloadStreamProcessor();
 		final Processor fileStreamProcessor = new FileStreamProcessor();
 		final Processor fileAggregationProcessor = new FileAggregationProcessor();

@@ -22,7 +22,7 @@ public class DownloadStreamProcessor implements Processor{
 	
 	private static final String PROCESSOR_NAME = "Downloading data";
 	
-	private static final String EVENT_NAME = "event.servive.tivo.download.stream";
+	private static final String EVENT_NAME = "event.service.tivo.download.stream";
 	
 	@Override
 	public void process(DownloadRequestDto request, DownloadConfigDto downloadConfigDto, String taskId) {

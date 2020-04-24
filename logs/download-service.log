@@ -1,0 +1,217 @@
+2020-04-24 17:18:38.043  INFO 23684 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 23684 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 17:18:38.043  INFO 23684 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 17:18:38.923  INFO 23684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 17:18:38.933  INFO 23684 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 17:18:38.933  INFO 23684 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 17:18:38.994  INFO 23684 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 17:18:38.994  INFO 23684 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 921 ms
+2020-04-24 17:18:39.187  INFO 23684 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 17:18:39.195  INFO 23684 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 17:18:39.242  INFO 23684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 17:18:39.242  INFO 23684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 17:18:39.272  INFO 23684 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 17:18:39.298  INFO 23684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-04-24 17:18:39.581  INFO 23684 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-24 17:18:39.605  INFO 23684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-04-24 17:18:39.605  INFO 23684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 17:18:39.606  INFO 23684 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-04-24 17:18:39.629  INFO 23684 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-24 17:18:39.631  INFO 23684 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 1.874 seconds (JVM running for 2.455)
+2020-04-24 17:19:39.313  INFO 23684 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-04-24 17:19:53.763  INFO 23684 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-24 17:19:53.763  INFO 23684 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-24 17:19:53.769  INFO 23684 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-04-24 17:21:27.913  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 17:21:27.915  INFO 23684 --- [RMI TCP Connection(2)-127.0.0.1] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown
+2020-04-24 22:44:03.064  INFO 20676 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 20676 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 22:44:03.067  INFO 20676 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 22:44:04.407  INFO 20676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 22:44:04.415  INFO 20676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 22:44:04.415  INFO 20676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 22:44:04.539  INFO 20676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 22:44:04.540  INFO 20676 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1430 ms
+2020-04-24 22:44:04.939  INFO 20676 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 22:44:04.947  INFO 20676 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 22:44:04.953  WARN 20676 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tivoDownloadController': Unsatisfied dependency expressed through field 'eventService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventServiceImpl': Unsatisfied dependency expressed through field 'restTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-04-24 22:44:04.953  INFO 20676 --- [main] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 22:44:04.956  INFO 20676 --- [main] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown
+2020-04-24 22:44:04.966  INFO 20676 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-04-24 22:44:05.009  INFO 20676 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-24 22:44:05.282 ERROR 20676 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field restTemplate in com.tivo.download.service.EventServiceImpl required a bean of type 'org.springframework.web.client.RestTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.web.client.RestTemplate' in your configuration.
+
+2020-04-24 22:45:00.179  INFO 16288 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 16288 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 22:45:00.182  INFO 16288 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 22:45:01.325  INFO 16288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 22:45:01.330  INFO 16288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 22:45:01.332  INFO 16288 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 22:45:01.386  INFO 16288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 22:45:01.387  INFO 16288 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1163 ms
+2020-04-24 22:45:01.618  INFO 16288 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 22:45:01.624  INFO 16288 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 22:45:01.693  INFO 16288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 22:45:01.696  INFO 16288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 22:45:01.709  INFO 16288 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 22:45:01.733  INFO 16288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-04-24 22:45:02.084  INFO 16288 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-24 22:45:02.111  INFO 16288 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-04-24 22:45:02.112  INFO 16288 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 22:45:02.113  INFO 16288 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-04-24 22:45:02.139  INFO 16288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-24 22:45:02.141  INFO 16288 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.519 seconds (JVM running for 3.361)
+2020-04-24 22:46:01.736  INFO 16288 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-04-24 22:46:58.646  INFO 16288 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-24 22:46:58.646  INFO 16288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-24 22:46:58.652  INFO 16288 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-04-24 22:46:58.758  INFO 16288 --- [http-nio-8080-exec-1] c.t.download.service.DownloadLogCache    : Download Record Cache is instantiated
+2020-04-24 22:46:58.772  INFO 16288 --- [http-nio-8080-exec-1] c.t.download.service.EventServiceImpl    : Logging event : Event(eventName=event.service.tivo.download.submitted, payload={"url":"dekpowdkp","outputFileName":"pddew","startFileNumber":1,"endFileNumber":2000,"isStream":true,"mediaMetadata":null,"fileDownloadDirectory":null,"taskId":"","resumeDownload":false,"processingPlan":"STRAIGHT_THROUGH"}, eventTime=2020-04-24T22:46:58.772, serviceName=${spring.application.name)
+2020-04-24 22:46:59.240  INFO 16288 --- [pool-2-thread-1] c.t.download.service.DownloadExecutor    : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Processing request : DownloadRequestDto(url=dekpowdkp, outputFileName=pddew, startFileNumber=1, endFileNumber=2000, isStream=true, mediaMetadata=null, fileDownloadDirectory=C:/Users/Raheal/Documents/omega-files/ae3caa39-00d7-4d38-af12-9d55cb5d4399, taskId=, resumeDownload=false, processingPlan=STRAIGHT_THROUGH)
+2020-04-24 22:46:59.242  INFO 16288 --- [pool-2-thread-1] c.t.d.processor.DownloadStreamProcessor  : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Run the DownloadStreamProcessor
+2020-04-24 22:46:59.244  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoGenericAdapter.py,"dekpowdkp",C:/Users/Raheal/Documents/omega-files/ae3caa39-00d7-4d38-af12-9d55cb5d4399,1,2000,true]
+2020-04-24 22:47:09.491  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399]
+Running TivoGenericAdapter script
+Ending TivoGenericAdapter script
+
+2020-04-24 22:47:09.495  INFO 16288 --- [pool-2-thread-1] c.t.d.processor.FileStreamProcessor      : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Run the FileStreamProcessor
+2020-04-24 22:47:09.496  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoUtils.py,C:/Users/Raheal/Documents/omega-files/ae3caa39-00d7-4d38-af12-9d55cb5d4399]
+2020-04-24 22:47:19.710  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399]
+Running TivoUtils script
+Ending TivoUtils script
+
+2020-04-24 22:47:19.714  INFO 16288 --- [pool-2-thread-1] c.t.d.p.FileAggregationProcessor         : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Run the FileAggregationProcessor
+2020-04-24 22:47:19.715  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoFileGenerator.py,C:/Users/Raheal/Documents/omega-files/ae3caa39-00d7-4d38-af12-9d55cb5d4399,pddew]
+2020-04-24 22:47:29.939  INFO 16288 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ae3caa39-00d7-4d38-af12-9d55cb5d4399]
+Running TivoFileGenerator script
+Ending TivoFileGenerator script
+
+2020-04-24 22:47:29.949 ERROR 16288 --- [pool-2-thread-1] c.t.download.processor.CleanupProcessor  : C:\Users\Raheal\Documents\omega-files\ae3caa39-00d7-4d38-af12-9d55cb5d4399\pddew.mp4
+
+java.nio.file.NoSuchFileException: C:\Users\Raheal\Documents\omega-files\ae3caa39-00d7-4d38-af12-9d55cb5d4399\pddew.mp4
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:318) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287) ~[na:1.8.0_211]
+	at java.nio.file.Files.move(Files.java:1395) ~[na:1.8.0_211]
+	at com.tivo.download.processor.CleanupProcessor.process(CleanupProcessor.java:44) ~[classes/:na]
+	at com.tivo.download.processor.FileAggregationProcessor.process(FileAggregationProcessor.java:36) [classes/:na]
+	at com.tivo.download.processor.FileStreamProcessor.process(FileStreamProcessor.java:33) [classes/:na]
+	at com.tivo.download.processor.DownloadStreamProcessor.process(DownloadStreamProcessor.java:40) [classes/:na]
+	at com.tivo.download.service.DownloadExecutor.downloadStreamData(DownloadExecutor.java:53) [classes/:na]
+	at com.tivo.download.service.DownloadExecutor.run(DownloadExecutor.java:34) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_211]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-04-24 22:49:00.267  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-24 22:49:00.271  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-04-24 22:49:00.272  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 22:49:00.272  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-04-24 22:49:00.274  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-04-24 22:49:00.275  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 22:49:00.276  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 22:49:00.276  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 22:49:00.276  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 22:49:00.277  INFO 16288 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown
+2020-04-24 22:49:25.779  INFO 28492 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 28492 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-04-24 22:49:25.783  INFO 28492 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-04-24 22:49:27.172  INFO 28492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-24 22:49:27.180  INFO 28492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-24 22:49:27.180  INFO 28492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-24 22:49:27.263  INFO 28492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-24 22:49:27.264  INFO 28492 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1446 ms
+2020-04-24 22:49:27.603  INFO 28492 --- [pool-1-thread-1] c.t.d.service.DownloadStatusCache        : Download Record Cache is instantiated
+2020-04-24 22:49:27.609  INFO 28492 --- [main] c.t.d.service.DownloadServiceImpl        : Running executor service
+2020-04-24 22:49:27.675  INFO 28492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 22:49:27.679  INFO 28492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 22:49:27.696  INFO 28492 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 22:49:27.722  INFO 28492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-04-24 22:49:28.015  INFO 28492 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-24 22:49:28.034  INFO 28492 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-04-24 22:49:28.036  INFO 28492 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 22:49:28.037  INFO 28492 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-04-24 22:49:28.105  INFO 28492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-24 22:49:28.107  INFO 28492 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.783 seconds (JVM running for 3.873)
+2020-04-24 22:49:57.711  INFO 28492 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-24 22:49:57.714  INFO 28492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-24 22:49:57.730  INFO 28492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-04-24 22:49:57.909  INFO 28492 --- [http-nio-8080-exec-1] c.t.download.service.DownloadLogCache    : Download Record Cache is instantiated
+2020-04-24 22:49:57.932  INFO 28492 --- [http-nio-8080-exec-1] c.t.download.service.EventServiceImpl    : Logging event : Event(eventName=event.service.tivo.download.submitted, payload={"url":"fekwp","outputFileName":"fkeowp","startFileNumber":1,"endFileNumber":2000,"isStream":true,"mediaMetadata":null,"fileDownloadDirectory":null,"taskId":"","resumeDownload":false,"processingPlan":"STRAIGHT_THROUGH"}, eventTime=2020-04-24T22:49:57.932, serviceName=download-service)
+2020-04-24 22:49:58.003  INFO 28492 --- [pool-2-thread-1] c.t.download.service.DownloadExecutor    : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Processing request : DownloadRequestDto(url=fekwp, outputFileName=fkeowp, startFileNumber=1, endFileNumber=2000, isStream=true, mediaMetadata=null, fileDownloadDirectory=C:/Users/Raheal/Documents/omega-files/ba26e72d-d854-4ebe-a1e5-2703a3add418, taskId=, resumeDownload=false, processingPlan=STRAIGHT_THROUGH)
+2020-04-24 22:49:58.008  INFO 28492 --- [pool-2-thread-1] c.t.d.processor.DownloadStreamProcessor  : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Run the DownloadStreamProcessor
+2020-04-24 22:49:58.012  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoGenericAdapter.py,"fekwp",C:/Users/Raheal/Documents/omega-files/ba26e72d-d854-4ebe-a1e5-2703a3add418,1,2000,true]
+2020-04-24 22:50:08.145  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418]
+Running TivoGenericAdapter script
+Ending TivoGenericAdapter script
+
+2020-04-24 22:50:08.147  INFO 28492 --- [pool-2-thread-1] c.t.d.processor.FileStreamProcessor      : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Run the FileStreamProcessor
+2020-04-24 22:50:08.147  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoUtils.py,C:/Users/Raheal/Documents/omega-files/ba26e72d-d854-4ebe-a1e5-2703a3add418]
+2020-04-24 22:50:18.324  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418]
+Running TivoUtils script
+Ending TivoUtils script
+
+2020-04-24 22:50:18.327  INFO 28492 --- [pool-2-thread-1] c.t.d.p.FileAggregationProcessor         : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Run the FileAggregationProcessor
+2020-04-24 22:50:18.328  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoFileGenerator.py,C:/Users/Raheal/Documents/omega-files/ba26e72d-d854-4ebe-a1e5-2703a3add418,fkeowp]
+2020-04-24 22:50:27.725  INFO 28492 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-04-24 22:50:28.521  INFO 28492 --- [pool-2-thread-1] com.tivo.download.service.GeneralUtils   : [ba26e72d-d854-4ebe-a1e5-2703a3add418]
+Running TivoFileGenerator script
+Ending TivoFileGenerator script
+
+2020-04-24 22:50:28.531 ERROR 28492 --- [pool-2-thread-1] c.t.download.processor.CleanupProcessor  : C:\Users\Raheal\Documents\omega-files\ba26e72d-d854-4ebe-a1e5-2703a3add418\fkeowp.mp4
+
+java.nio.file.NoSuchFileException: C:\Users\Raheal\Documents\omega-files\ba26e72d-d854-4ebe-a1e5-2703a3add418\fkeowp.mp4
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:318) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287) ~[na:1.8.0_211]
+	at java.nio.file.Files.move(Files.java:1395) ~[na:1.8.0_211]
+	at com.tivo.download.processor.CleanupProcessor.process(CleanupProcessor.java:44) ~[classes/:na]
+	at com.tivo.download.processor.FileAggregationProcessor.process(FileAggregationProcessor.java:36) [classes/:na]
+	at com.tivo.download.processor.FileStreamProcessor.process(FileStreamProcessor.java:33) [classes/:na]
+	at com.tivo.download.processor.DownloadStreamProcessor.process(DownloadStreamProcessor.java:40) [classes/:na]
+	at com.tivo.download.service.DownloadExecutor.downloadStreamData(DownloadExecutor.java:53) [classes/:na]
+	at com.tivo.download.service.DownloadExecutor.run(DownloadExecutor.java:34) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_211]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-04-24 22:58:37.195  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-24 22:58:37.201  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-04-24 22:58:37.201  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-04-24 22:58:37.205  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-04-24 22:58:37.209  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-04-24 22:58:37.209  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-04-24 22:58:37.211  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-04-24 22:58:37.212  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-04-24 22:58:37.213  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.DownloadServiceImpl        : Executor service has stopped
+2020-04-24 22:58:37.214  INFO 28492 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.CacheControllerServiceImpl       : Scheduler is shutdown

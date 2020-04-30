@@ -30,15 +30,12 @@ public class CleanupProcessor implements Processor{
 	private static final String EVENT_NAME = "event.service.tivo.download.finalise";
 	
 	@Override
-	public void process(DownloadRequestDto request, DownloadConfigDto config, String taskId) {
-		
+	public void process(DownloadRequestDto request, DownloadConfigDto config, String taskId) {	
 		GeneralUtils.createDownloadStatusRecord(taskId, Status.IN_PROGRESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
-		
 		//move the final file to the library folder
 		final Path file = Paths.get(request.getFileDownloadDirectory() + File.separator + request.getOutputFileName() + ".mp4");
 		final Path targetFile = Paths.get(config.getLibraryPath() + File.separator + request.getOutputFileName() + ".mp4");
 		final Path targetFolder = Paths.get(config.getLibraryPath());
-		
 		// delete the folder containing the stream files
 		try {
 			Files.move(file, targetFile);
@@ -55,18 +52,10 @@ public class CleanupProcessor implements Processor{
 		if (processor != null) {
 			processor.process(request, config, taskId);
 		}
-		
-
 	}
-	
-	
-	
-	
-	
 
 	@Override
 	public void setNextProcessor(Processor processor) {
 		this.processor = processor;
 	}
-
 }

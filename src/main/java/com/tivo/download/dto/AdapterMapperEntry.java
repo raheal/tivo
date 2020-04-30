@@ -15,4 +15,6 @@ public class AdapterMapperEntry {
 	
 	private String urlPattern;
 	
+	private Boolean isStream;
+	
 }

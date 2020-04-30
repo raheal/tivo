@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.DownloadStatusDto;
 import com.tivo.download.dto.Status;
+import com.tivo.download.model.ProcessResult;
 
 public class GeneralUtils {
 
@@ -38,7 +39,7 @@ public class GeneralUtils {
 	}
 	
 	
-	public static Integer runProcessBuilder(final List<String> cmdArguments, final String directory, final String taskId, final DownloadRequestDto request) throws IOException, InterruptedException {
+	public static ProcessResult runProcessBuilder(final List<String> cmdArguments, final String directory, final String taskId, final DownloadRequestDto request) throws IOException, InterruptedException {
 		LOGGER.info("[{}] Running command : [{}]", taskId, StringUtils.join(cmdArguments));
 		final ProcessBuilder processBuilder = new ProcessBuilder();
 		processBuilder.command(cmdArguments);
@@ -47,7 +48,12 @@ public class GeneralUtils {
 		final String processOutput = IOUtils.toString(process.getInputStream(), StandardCharsets.UTF_8);
 		LOGGER.info("[{}]\n" + processOutput, taskId);
 		final int exitValue = process.waitFor();
-		return exitValue;
+		final String processMessage = GeneralUtils.BLANK_LITERAL;
+		if (exitValue == 1) {
+			final String processError = IOUtils.toString(process.getErrorStream(), StandardCharsets.UTF_8);
+			LOGGER.error(processError);
+		}
+		return new ProcessResult(exitValue, processMessage);
 	}
 	
 	

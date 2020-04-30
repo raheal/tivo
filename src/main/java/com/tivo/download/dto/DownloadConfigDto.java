@@ -17,4 +17,6 @@ public class DownloadConfigDto {
 	
 	private String libraryPath;
 	
+	private String adapterMapperFilePath;
+	
 }

@@ -1,0 +1,18 @@
+{
+	"defaultAdapter" : {
+		"name":"default",
+		"script" : "TivoGenericAdapter.py"
+	},
+	"customAdapters" : [
+		{
+			"name" : "youtube",
+			"script" : "youtube.py",
+			"urlPattern" : "youtube.com"
+		},
+		{
+			"name" : "vendor1",
+			"script" : "vendor1.py",
+			"urlPattern" : "vendor1.com"
+		}
+	]
+}

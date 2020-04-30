@@ -34,6 +34,9 @@ public class DownloadServiceImpl implements DownloadService{
 	@Value("${download.library.path}")
 	private String downloadLibraryPath;
 	
+	@Value("${adapter.mapper.file.path}")
+	private String adapterMapperFilePath;
+	
 	private ExecutorService executorService;
 	
 	@PostConstruct
@@ -53,7 +56,7 @@ public class DownloadServiceImpl implements DownloadService{
 	
 	@Override
 	public void downloadStreamData(DownloadRequestDto request, String taskId)  {
-		executorService.submit(new DownloadExecutor(request, taskId, new DownloadConfigDto(downloadParentPath, pythonInterpreterPath, scriptWorkingDirectory, downloadLibraryPath)));
+		executorService.submit(new DownloadExecutor(request, taskId, new DownloadConfigDto(downloadParentPath, pythonInterpreterPath, scriptWorkingDirectory, downloadLibraryPath, adapterMapperFilePath)));
 	}
 
 	@Override

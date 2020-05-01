@@ -54,3 +54,9 @@ view the log file:
 http://localhost:8080/actuator/logfile
 
 (case sensitive URL)
+
+
+===============
+
+good article for creating RestControllerAdvice (for all rest controllers)
+https://thepracticaldeveloper.com/2019/09/09/custom-error-handling-rest-controllers-spring-boot/

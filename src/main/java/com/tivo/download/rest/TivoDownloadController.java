@@ -17,13 +17,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.DownloadRequestStatusDto;
-import com.tivo.download.dto.Event;
-import com.tivo.download.dto.EventBuilder;
-import com.tivo.download.dto.Status;
 import com.tivo.download.exceptions.ServiceException;
+import com.tivo.download.model.Event;
+import com.tivo.download.model.EventBuilder;
+import com.tivo.download.model.Status;
 import com.tivo.download.service.DownloadService;
 import com.tivo.download.service.EventService;
-import com.tivo.download.service.GeneralUtils;
+import com.tivo.download.utils.GeneralUtils;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -38,7 +38,6 @@ public class TivoDownloadController {
 	@Autowired
 	private EventService eventService;
 
-	
 	@Autowired
 	private SimpMessagingTemplate template;
 	

@@ -1,5 +1,7 @@
 package com.tivo.download.dto;
 
+import com.tivo.download.model.Status;
+
 import lombok.Getter;
 import lombok.Setter;
 

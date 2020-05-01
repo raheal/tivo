@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 
 import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
-import com.tivo.download.dto.Status;
 import com.tivo.download.model.ProcessResult;
-import com.tivo.download.service.GeneralUtils;
+import com.tivo.download.model.Status;
+import com.tivo.download.utils.GeneralUtils;
 
 public class FileAggregationProcessor implements Processor {
 
@@ -50,7 +50,6 @@ public class FileAggregationProcessor implements Processor {
 	@Override
 	public void setNextProcessor(Processor processor) {
 		this.processor = processor;
-
 	}
 
 }

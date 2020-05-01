@@ -12,15 +12,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tivo.download.dto.AdapterDetail;
-import com.tivo.download.dto.AdapterMapperDto;
-import com.tivo.download.dto.AdapterMapperEntry;
 import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
-import com.tivo.download.dto.Status;
 import com.tivo.download.exceptions.ServiceException;
+import com.tivo.download.model.AdapterDetail;
+import com.tivo.download.model.AdapterMapper;
+import com.tivo.download.model.AdapterMapperEntry;
 import com.tivo.download.model.ProcessResult;
-import com.tivo.download.service.GeneralUtils;
+import com.tivo.download.model.Status;
+import com.tivo.download.utils.GeneralUtils;
 
 public class DownloadStreamProcessor implements Processor{
 
@@ -37,14 +37,12 @@ public class DownloadStreamProcessor implements Processor{
 		LOGGER.info("[{}] Run the DownloadStreamProcessor", taskId);
 		GeneralUtils.createDownloadStatusRecord(taskId, Status.IN_PROGRESS, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME, EVENT_NAME);
 		try {
-			final AdapterMapperDto adapterMapperDto = new ObjectMapper().readValue(new File(downloadConfigDto.getAdapterMapperFilePath()), AdapterMapperDto.class);
+			final AdapterMapper adapterMapperDto = new ObjectMapper().readValue(new File(downloadConfigDto.getAdapterMapperFilePath()), AdapterMapper.class);
 			final AdapterDetail adapterDetail = getAdapter(adapterMapperDto, request.getUrl());
-			
 			// here, override the isStream property using the adapter's value rather than using the request's value
 			if (adapterDetail.getIsStream() != null && !adapterDetail.getIsStream()) {
 				request.setIsStream(false);
 			}
-			
 			final Path fileDownloadPath = Paths.get(request.getFileDownloadDirectory());
 			if (!Files.exists(fileDownloadPath)) {
 				Files.createDirectories(fileDownloadPath);				
@@ -76,7 +74,7 @@ public class DownloadStreamProcessor implements Processor{
 		return Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), adapterDetail.getAdapterScript(), "\"" + request.getUrl() + "\"", request.getFileDownloadDirectory(), String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())});
 	}
 	
-	private AdapterDetail getAdapter(final AdapterMapperDto adapterMapper, final String downloadUrl) throws ServiceException{
+	private AdapterDetail getAdapter(final AdapterMapper adapterMapper, final String downloadUrl) throws ServiceException{
 		if (adapterMapper == null) {
 			throw new ServiceException("No adapters are provided in the mapper file");
 		}

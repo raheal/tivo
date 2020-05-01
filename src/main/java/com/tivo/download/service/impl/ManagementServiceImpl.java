@@ -1,4 +1,4 @@
-package com.tivo.download.service;
+package com.tivo.download.service.impl;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.tivo.download.dto.MediaFile;
+import com.tivo.download.model.MediaFile;
+import com.tivo.download.service.ManagementService;
 
 @Service
 public class ManagementServiceImpl implements ManagementService {

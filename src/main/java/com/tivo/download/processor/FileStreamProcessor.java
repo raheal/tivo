@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 
 import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
-import com.tivo.download.dto.Status;
 import com.tivo.download.model.ProcessResult;
-import com.tivo.download.service.GeneralUtils;
+import com.tivo.download.model.Status;
+import com.tivo.download.utils.GeneralUtils;
 
 public class FileStreamProcessor implements Processor{
 

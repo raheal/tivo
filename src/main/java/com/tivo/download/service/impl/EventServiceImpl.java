@@ -1,4 +1,4 @@
-package com.tivo.download.service;
+package com.tivo.download.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.tivo.download.dto.Event;
 import com.tivo.download.exceptions.ServiceException;
+import com.tivo.download.model.Event;
+import com.tivo.download.service.EventService;
 
 @Service
 public class EventServiceImpl implements EventService {

@@ -3,6 +3,7 @@ package com.tivo.download.dto;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.tivo.download.model.Status;
 
 import lombok.Getter;
 import lombok.Setter;

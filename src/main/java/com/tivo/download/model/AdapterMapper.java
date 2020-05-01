@@ -1,4 +1,4 @@
-package com.tivo.download.dto;
+package com.tivo.download.model;
 
 import java.util.List;
 
@@ -9,11 +9,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AdapterMapperDto {
-
+public class AdapterMapper {
+	
 	private AdapterMapperEntry defaultAdapter;
 	
 	private List<AdapterMapperEntry> customAdapters;
-	
 	
 }

@@ -1,4 +1,4 @@
-package com.tivo.download.service;
+package com.tivo.download.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,10 +12,12 @@ import org.apache.tomcat.util.buf.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.tivo.download.cache.DownloadLogCache;
+import com.tivo.download.cache.DownloadStatusCache;
 import com.tivo.download.dto.DownloadRequestDto;
 import com.tivo.download.dto.DownloadStatusDto;
-import com.tivo.download.dto.Status;
 import com.tivo.download.model.ProcessResult;
+import com.tivo.download.model.Status;
 
 public class GeneralUtils {
 

@@ -1,4 +1,4 @@
-package com.tivo.download.dto;
+package com.tivo.download.model;
 
 import java.time.LocalDateTime;
 

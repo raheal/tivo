@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tivo.download.cache.DownloadLogCache;
+import com.tivo.download.cache.DownloadStatusCache;
 import com.tivo.download.dto.DownloadStatusDto;
-import com.tivo.download.service.DownloadLogCache;
-import com.tivo.download.service.DownloadStatusCache;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;

@@ -1,4 +1,4 @@
-package com.tivo.download.service;
+package com.tivo.download.service.impl;
 
 import java.io.File;
 
@@ -6,6 +6,8 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import com.tivo.download.service.FileService;
 
 @Service
 public class FileServiceImpl implements FileService{

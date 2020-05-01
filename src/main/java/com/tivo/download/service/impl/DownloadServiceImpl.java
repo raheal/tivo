@@ -1,4 +1,4 @@
-package com.tivo.download.service;
+package com.tivo.download.service.impl;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import com.tivo.download.dto.DownloadConfigDto;
 import com.tivo.download.dto.DownloadRequestDto;
+import com.tivo.download.service.DownloadExecutor;
+import com.tivo.download.service.DownloadService;
 
 @Service
 public class DownloadServiceImpl implements DownloadService{

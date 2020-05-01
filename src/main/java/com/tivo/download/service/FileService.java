@@ -7,7 +7,4 @@ public interface FileService {
 
 	Boolean deleteFile(final File folderPath);
 	
-	
-	
-	
 }

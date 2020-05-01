@@ -1,7 +1,7 @@
 package com.tivo.download.service;
 
-import com.tivo.download.dto.Event;
 import com.tivo.download.exceptions.ServiceException;
+import com.tivo.download.model.Event;
 
 public interface EventService {
 

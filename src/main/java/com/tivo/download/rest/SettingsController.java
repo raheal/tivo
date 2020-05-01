@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tivo.download.cache.DownloadLogCache;
+import com.tivo.download.cache.DownloadStatusCache;
 import com.tivo.download.service.CacheControllerService;
-import com.tivo.download.service.DownloadLogCache;
-import com.tivo.download.service.DownloadStatusCache;
 import com.tivo.download.service.FileService;
 
 @RequestMapping("/api/v1/settings")

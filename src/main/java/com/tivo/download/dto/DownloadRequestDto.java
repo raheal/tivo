@@ -1,5 +1,7 @@
 package com.tivo.download.dto;
 
+import com.tivo.download.model.ProcessingPlan;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

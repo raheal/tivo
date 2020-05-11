@@ -1,200 +1,70 @@
-2020-05-01 00:52:49.914  INFO 23664 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 23664 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 00:52:49.920  INFO 23664 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 00:52:51.038  INFO 23664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 00:52:51.046  INFO 23664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 00:52:51.046  INFO 23664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 00:52:51.118  INFO 23664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 00:52:51.118  INFO 23664 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1158 ms
-2020-05-01 00:52:51.360  INFO 23664 --- [pool-2-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 00:52:51.364  INFO 23664 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 00:52:51.433  INFO 23664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 00:52:51.438  INFO 23664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 00:52:51.460  INFO 23664 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 00:52:51.488  INFO 23664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 00:52:51.780  INFO 23664 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 00:52:51.810  INFO 23664 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 00:52:51.811  INFO 23664 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 00:52:51.812  INFO 23664 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 00:52:51.885  INFO 23664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 00:52:51.887  INFO 23664 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.344 seconds (JVM running for 3.618)
-2020-05-01 00:53:51.491  INFO 23664 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2020-05-01 00:54:47.884  INFO 23664 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 00:54:47.885  INFO 23664 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 00:54:47.890  INFO 23664 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-05-01 00:55:12.089  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 00:55:12.101  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 00:55:12.103  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 00:55:12.103  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 00:55:12.108  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 00:55:12.109  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 00:55:12.110  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 00:55:12.110  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 00:55:12.112  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 00:55:12.112  INFO 23664 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 00:58:20.790  INFO 33216 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 33216 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 00:58:20.792  INFO 33216 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 00:58:21.790  INFO 33216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 00:58:21.798  INFO 33216 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 00:58:21.800  INFO 33216 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 00:58:21.901  INFO 33216 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 00:58:21.902  INFO 33216 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1071 ms
-2020-05-01 00:58:22.126  INFO 33216 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 00:58:22.133  INFO 33216 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 00:58:22.190  INFO 33216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 00:58:22.195  INFO 33216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 00:58:22.212  INFO 33216 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 00:58:22.237  INFO 33216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 00:58:22.529  INFO 33216 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 00:58:22.552  INFO 33216 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 00:58:22.552  INFO 33216 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 00:58:22.553  INFO 33216 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 00:58:22.633  INFO 33216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 00:58:22.637  INFO 33216 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.24 seconds (JVM running for 2.938)
-2020-05-01 00:58:27.042  INFO 33216 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 00:58:27.043  INFO 33216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 00:58:27.048  INFO 33216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-05-01 00:59:12.789  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 00:59:12.791  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 00:59:12.791  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 00:59:12.791  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 00:59:12.792  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 00:59:12.793  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 00:59:12.793  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 00:59:12.793  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 00:59:12.793  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 00:59:12.793  INFO 33216 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 00:59:35.557  INFO 35380 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 35380 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 00:59:35.559  INFO 35380 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 00:59:36.563  INFO 35380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 00:59:36.567  INFO 35380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 00:59:36.570  INFO 35380 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 00:59:36.637  INFO 35380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 00:59:36.637  INFO 35380 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1046 ms
-2020-05-01 00:59:36.881  INFO 35380 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 00:59:36.890  INFO 35380 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 00:59:36.954  INFO 35380 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 00:59:36.959  INFO 35380 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 00:59:36.976  INFO 35380 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 00:59:37.003  INFO 35380 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 00:59:37.302  INFO 35380 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 00:59:37.327  INFO 35380 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 00:59:37.327  INFO 35380 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 00:59:37.328  INFO 35380 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 00:59:37.405  INFO 35380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 00:59:37.407  INFO 35380 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.212 seconds (JVM running for 3.159)
-2020-05-01 00:59:42.595  INFO 35380 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 00:59:42.596  INFO 35380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 00:59:42.600  INFO 35380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-05-01 01:00:16.584  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:00:16.590  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:00:16.591  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:00:16.592  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:00:16.596  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:00:16.597  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:00:16.599  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:00:16.599  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:00:16.599  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:00:16.600  INFO 35380 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:02:08.202  INFO 24268 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 24268 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:02:08.204  INFO 24268 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:02:09.278  INFO 24268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:02:09.283  INFO 24268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:02:09.283  INFO 24268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:02:09.348  INFO 24268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:02:09.348  INFO 24268 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1112 ms
-2020-05-01 01:02:09.665  INFO 24268 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:02:09.672  INFO 24268 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:02:09.809  INFO 24268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:02:09.815  INFO 24268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:02:09.838  INFO 24268 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:02:09.880  INFO 24268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:02:10.331  INFO 24268 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:02:10.353  INFO 24268 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:02:10.353  INFO 24268 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:02:10.355  INFO 24268 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:02:10.377  INFO 24268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:02:10.379  INFO 24268 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.581 seconds (JVM running for 3.256)
-2020-05-01 01:02:15.583  INFO 24268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:02:15.583  INFO 24268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:02:15.587  INFO 24268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-05-01 01:02:26.945  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:02:26.954  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:02:26.955  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:02:26.956  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:02:26.960  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:02:26.961  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:02:26.962  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:02:26.963  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:02:26.964  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:02:26.964  INFO 24268 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:03:37.100  INFO 9672 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 9672 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:03:37.103  INFO 9672 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:03:37.989  INFO 9672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:03:37.995  INFO 9672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:03:37.996  INFO 9672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:03:38.054  INFO 9672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:03:38.055  INFO 9672 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 920 ms
-2020-05-01 01:03:38.330  INFO 9672 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:03:38.338  INFO 9672 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:03:38.489  INFO 9672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:03:38.494  INFO 9672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:03:38.522  INFO 9672 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:03:38.569  INFO 9672 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:03:39.011  INFO 9672 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:03:39.037  INFO 9672 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:03:39.040  INFO 9672 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:03:39.041  INFO 9672 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:03:39.063  INFO 9672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:03:39.067  INFO 9672 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.421 seconds (JVM running for 3.119)
-2020-05-01 01:03:42.067  INFO 9672 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:03:42.068  INFO 9672 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:03:42.073  INFO 9672 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-05-01 01:04:38.568  INFO 9672 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2020-05-01 01:29:09.744  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:29:09.752  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:29:09.752  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:29:09.755  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:29:09.759  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:29:09.760  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:29:09.762  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:29:09.763  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:29:09.764  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:29:09.766  INFO 9672 --- [RMI TCP Connection(4)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:29:34.798  INFO 24448 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 24448 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:29:34.800  INFO 24448 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:29:35.787  INFO 24448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:29:35.791  INFO 24448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:29:35.791  INFO 24448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:29:35.850  INFO 24448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:29:35.851  INFO 24448 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1013 ms
-2020-05-01 01:29:36.191  INFO 24448 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:29:36.199  INFO 24448 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:29:36.268  INFO 24448 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:29:36.271  INFO 24448 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:29:36.288  INFO 24448 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:29:36.322  INFO 24448 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:29:36.699  INFO 24448 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:29:36.720  INFO 24448 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:29:36.721  INFO 24448 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:29:36.722  INFO 24448 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:29:36.769  INFO 24448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:29:36.772  INFO 24448 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.434 seconds (JVM running for 3.073)
-2020-05-01 01:29:43.339  INFO 24448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:29:43.339  INFO 24448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:29:43.344  INFO 24448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-05-01 01:29:43.367  WARN 24448 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.tivo.download.rest.TivoControllerAdvice#customiseErrorResponse(ServiceException, String)
+2020-05-11 00:15:22.298  INFO 14992 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 0, completed tasks = 14]
+2020-05-11 00:34:05.706  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-11 00:34:05.710  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2020-05-11 00:34:05.711  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-11 00:34:05.711  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2020-05-11 00:34:05.712  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2020-05-11 00:34:05.713  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-05-11 00:34:05.715  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-05-11 00:34:05.715  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-05-11 00:34:05.715  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
+2020-05-11 00:34:05.716  INFO 14992 --- [RMI TCP Connection(14)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
+2020-05-11 00:35:24.224  INFO 7092 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 7092 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
+2020-05-11 00:35:24.224  INFO 7092 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
+2020-05-11 00:35:25.270  INFO 7092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-11 00:35:25.278  INFO 7092 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 00:35:25.278  INFO 7092 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-05-11 00:35:25.325  INFO 7092 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-11 00:35:25.325  INFO 7092 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1070 ms
+2020-05-11 00:35:25.528  INFO 7092 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
+2020-05-11 00:35:25.544  INFO 7092 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
+2020-05-11 00:35:25.591  INFO 7092 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-05-11 00:35:25.591  INFO 7092 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-05-11 00:35:25.606  INFO 7092 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-05-11 00:35:25.638  INFO 7092 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2020-05-11 00:35:25.903  INFO 7092 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-05-11 00:35:25.919  INFO 7092 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2020-05-11 00:35:25.919  INFO 7092 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-11 00:35:25.919  INFO 7092 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2020-05-11 00:35:25.997  INFO 7092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-11 00:35:25.997  INFO 7092 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.072 seconds (JVM running for 3.673)
+2020-05-11 00:35:29.191  INFO 7092 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-11 00:35:29.192  INFO 7092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-11 00:35:29.196  INFO 7092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-05-11 00:36:25.641  INFO 7092 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2020-05-11 00:37:35.661  INFO 7092 --- [http-nio-8080-exec-7] c.tivo.download.cache.DownloadLogCache   : Download Record Cache is instantiated
+2020-05-11 00:37:35.673  INFO 7092 --- [pool-2-thread-1] c.t.download.service.DownloadExecutor    : [d9eb8577-5ab1-4768-a3be-d24403cb2d46] Processing request : DownloadRequestDto(url=https://www.youtube.com/watch?v=ukLnPbIffxE, outputFileName=aliabdaal, startFileNumber=1, endFileNumber=2000, isStream=true, mediaMetadata=null, fileDownloadDirectory=C:/Users/Raheal/Documents/omega-files/d9eb8577-5ab1-4768-a3be-d24403cb2d46, taskId=, resumeDownload=false, processingPlan=STRAIGHT_THROUGH)
+2020-05-11 00:37:35.676  INFO 7092 --- [pool-2-thread-1] c.t.d.processor.DownloadStreamProcessor  : [d9eb8577-5ab1-4768-a3be-d24403cb2d46] Run the DownloadStreamProcessor
+2020-05-11 00:37:35.691  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [d9eb8577-5ab1-4768-a3be-d24403cb2d46] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,youtube.py,"https://www.youtube.com/watch?v=ukLnPbIffxE",C:/Users/Raheal/Documents/omega-files/d9eb8577-5ab1-4768-a3be-d24403cb2d46,aliabdaal]
+2020-05-11 00:40:48.376  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [d9eb8577-5ab1-4768-a3be-d24403cb2d46]
+[DEBUG] Description = How to study for exams - Evidence-based revision tips
+[DEBUG] Chosen resolution = 1080p
 
-java.lang.IllegalStateException: Could not resolve parameter [1] in public com.tivo.download.dto.TivoErrorResponseDto com.tivo.download.rest.TivoControllerAdvice.customiseErrorResponse(com.tivo.download.exceptions.ServiceException,java.lang.String): No suitable resolver
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:164) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+2020-05-11 00:40:48.381  INFO 7092 --- [pool-2-thread-1] c.t.download.processor.CleanupProcessor  : Deleting temporary files
+2020-05-11 00:43:22.709 ERROR 7092 --- [http-nio-8080-exec-5] c.t.d.s.impl.ManagementServiceImpl       : C:\Users\Raheal\Documents\omega-files\d9eb8577-5ab1-4768-a3be-d24403cb2d46
+
+java.nio.file.NoSuchFileException: C:\Users\Raheal\Documents\omega-files\d9eb8577-5ab1-4768-a3be-d24403cb2d46
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:518) ~[na:1.8.0_211]
+	at java.nio.file.Files.newDirectoryStream(Files.java:457) ~[na:1.8.0_211]
+	at java.nio.file.Files.list(Files.java:3451) ~[na:1.8.0_211]
+	at com.tivo.download.service.impl.ManagementServiceImpl.listMediaFiles(ManagementServiceImpl.java:50) [classes/:na]
+	at com.tivo.download.service.impl.ManagementServiceImpl.listMediaFilesInDownloadFolder(ManagementServiceImpl.java:37) [classes/:na]
+	at com.tivo.download.rest.SummaryPanelController.getMediaFileDataForGivenDownloadDirectory(SummaryPanelController.java:31) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
@@ -239,79 +109,30 @@ java.lang.IllegalStateException: Could not resolve parameter [1] in public com.t
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
 
-2020-05-01 01:29:43.376 ERROR 24448 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.tivo.download.exceptions.ServiceException: Test Error] with root cause
+2020-05-11 00:43:23.584 ERROR 7092 --- [http-nio-8080-exec-6] c.t.d.s.impl.ManagementServiceImpl       : C:\Users\Raheal\Documents\omega-files\d9eb8577-5ab1-4768-a3be-d24403cb2d46
 
-com.tivo.download.exceptions.ServiceException: Test Error
-	at com.tivo.download.rest.SummaryPanelController.test(SummaryPanelController.java:34) ~[classes/:na]
+java.nio.file.NoSuchFileException: C:\Users\Raheal\Documents\omega-files\d9eb8577-5ab1-4768-a3be-d24403cb2d46
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:86) ~[na:1.8.0_211]
+	at sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:518) ~[na:1.8.0_211]
+	at java.nio.file.Files.newDirectoryStream(Files.java:457) ~[na:1.8.0_211]
+	at java.nio.file.Files.list(Files.java:3451) ~[na:1.8.0_211]
+	at com.tivo.download.service.impl.ManagementServiceImpl.listMediaFiles(ManagementServiceImpl.java:50) [classes/:na]
+	at com.tivo.download.service.impl.ManagementServiceImpl.listMediaFilesInDownloadFolder(ManagementServiceImpl.java:37) [classes/:na]
+	at com.tivo.download.rest.SummaryPanelController.getMediaFileDataForGivenDownloadDirectory(SummaryPanelController.java:31) [classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.0.BUILD-SNAPSHOT.jar:2.2.0.BUILD-SNAPSHOT]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
-
-2020-05-01 01:30:36.326  INFO 24448 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2020-05-01 01:30:39.270  WARN 24448 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.tivo.download.rest.TivoControllerAdvice#customiseErrorResponse(ServiceException, String)
-
-java.lang.IllegalStateException: Could not resolve parameter [1] in public com.tivo.download.dto.TivoErrorResponseDto com.tivo.download.rest.TivoControllerAdvice.customiseErrorResponse(com.tivo.download.exceptions.ServiceException,java.lang.String): No suitable resolver
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:164) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
@@ -356,344 +177,19 @@ java.lang.IllegalStateException: Could not resolve parameter [1] in public com.t
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
 
-2020-05-01 01:30:39.274 ERROR 24448 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.tivo.download.exceptions.ServiceException: Test Error] with root cause
+2020-05-11 00:43:48.988  INFO 7092 --- [pool-2-thread-1] c.t.download.service.DownloadExecutor    : [8ef2c767-3832-437d-bff8-7ca013ab0412] Processing request : DownloadRequestDto(url=rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr, outputFileName=null, startFileNumber=1, endFileNumber=2000, isStream=true, mediaMetadata=null, fileDownloadDirectory=C:/Users/Raheal/Documents/omega-files/8ef2c767-3832-437d-bff8-7ca013ab0412, taskId=, resumeDownload=false, processingPlan=STRAIGHT_THROUGH)
+2020-05-11 00:43:48.989  INFO 7092 --- [pool-2-thread-1] c.t.d.processor.DownloadStreamProcessor  : [8ef2c767-3832-437d-bff8-7ca013ab0412] Run the DownloadStreamProcessor
+2020-05-11 00:43:48.992  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [8ef2c767-3832-437d-bff8-7ca013ab0412] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoGenericAdapter.py,"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",C:/Users/Raheal/Documents/omega-files/8ef2c767-3832-437d-bff8-7ca013ab0412,1,2000,true]
+2020-05-11 00:43:59.085  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [8ef2c767-3832-437d-bff8-7ca013ab0412]
+Running TivoGenericAdapter script
+Ending TivoGenericAdapter script
 
-com.tivo.download.exceptions.ServiceException: Test Error
-	at com.tivo.download.rest.SummaryPanelController.test(SummaryPanelController.java:34) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.0.BUILD-SNAPSHOT.jar:2.2.0.BUILD-SNAPSHOT]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+2020-05-11 00:43:59.089  INFO 7092 --- [pool-2-thread-1] c.t.d.processor.FileStreamProcessor      : [8ef2c767-3832-437d-bff8-7ca013ab0412] Run the FileStreamProcessor
+2020-05-11 00:43:59.090  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [8ef2c767-3832-437d-bff8-7ca013ab0412] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoUtils.py,C:/Users/Raheal/Documents/omega-files/8ef2c767-3832-437d-bff8-7ca013ab0412]
+2020-05-11 00:44:09.191  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [8ef2c767-3832-437d-bff8-7ca013ab0412]
+Running TivoUtils script
+Ending TivoUtils script
 
-2020-05-01 01:31:36.201  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:31:36.206  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:31:36.207  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:31:36.208  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:31:36.212  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:31:36.213  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:31:36.215  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:31:36.216  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:31:36.216  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:31:36.218  INFO 24448 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:33:25.481  INFO 15832 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 15832 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:33:25.483  INFO 15832 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:33:26.640  INFO 15832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:33:26.649  INFO 15832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:33:26.649  INFO 15832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:33:26.723  INFO 15832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:33:26.723  INFO 15832 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1206 ms
-2020-05-01 01:33:26.962  INFO 15832 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:33:26.974  INFO 15832 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:33:27.120  INFO 15832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:33:27.124  INFO 15832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:33:27.140  INFO 15832 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:33:27.170  INFO 15832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:33:27.550  INFO 15832 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:33:27.582  INFO 15832 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:33:27.582  INFO 15832 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:33:27.584  INFO 15832 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:33:27.672  INFO 15832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:33:27.675  INFO 15832 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.707 seconds (JVM running for 3.397)
-2020-05-01 01:33:32.487  INFO 15832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:33:32.488  INFO 15832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:33:32.492  INFO 15832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-05-01 01:33:32.514  WARN 15832 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.tivo.download.rest.TivoControllerAdvice#customiseErrorResponse(ServiceException, String)
-
-java.lang.IllegalStateException: Could not resolve parameter [1] in public org.springframework.http.ResponseEntity<com.tivo.download.dto.TivoErrorResponseDto> com.tivo.download.rest.TivoControllerAdvice.customiseErrorResponse(com.tivo.download.exceptions.ServiceException,java.lang.String): No suitable resolver
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:164) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.0.BUILD-SNAPSHOT.jar:2.2.0.BUILD-SNAPSHOT]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
-
-2020-05-01 01:33:32.522 ERROR 15832 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.tivo.download.exceptions.ServiceException: Test Error] with root cause
-
-com.tivo.download.exceptions.ServiceException: Test Error
-	at com.tivo.download.rest.SummaryPanelController.test(SummaryPanelController.java:34) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.0.BUILD-SNAPSHOT.jar:2.2.0.BUILD-SNAPSHOT]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
-
-2020-05-01 01:34:27.172  INFO 15832 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2020-05-01 01:35:00.305  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:35:00.308  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:35:00.309  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:35:00.309  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:35:00.310  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:35:00.311  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:35:00.311  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:35:00.312  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:35:00.312  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:35:00.312  INFO 15832 --- [RMI TCP Connection(4)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:35:51.961  INFO 9160 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 9160 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:35:51.964  INFO 9160 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:35:52.866  INFO 9160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:35:52.872  INFO 9160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:35:52.872  INFO 9160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:35:52.941  INFO 9160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:35:52.942  INFO 9160 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 948 ms
-2020-05-01 01:35:53.152  INFO 9160 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:35:53.161  INFO 9160 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:35:53.234  INFO 9160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:35:53.238  INFO 9160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:35:53.257  INFO 9160 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:35:53.283  INFO 9160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:35:53.601  INFO 9160 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:35:53.673  INFO 9160 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:35:53.673  INFO 9160 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:35:53.676  INFO 9160 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:35:53.703  INFO 9160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:35:53.704  INFO 9160 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.021 seconds (JVM running for 2.751)
-2020-05-01 01:35:58.261  INFO 9160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:35:58.262  INFO 9160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:35:58.267  INFO 9160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-05-01 01:36:49.505  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:36:49.509  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:36:49.510  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:36:49.510  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:36:49.513  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:36:49.514  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:36:49.516  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:36:49.516  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:36:49.517  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:36:49.518  INFO 9160 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
-2020-05-01 01:40:53.534  INFO 26352 --- [main] c.t.d.TivoDownloadServiceApplication     : Starting TivoDownloadServiceApplication on DESKTOP-KHBEN76 with PID 26352 (C:\Users\Raheal\Documents\workspace\tivo-download-service\target\classes started by Raheal in C:\Users\Raheal\Documents\workspace\tivo-download-service)
-2020-05-01 01:40:53.536  INFO 26352 --- [main] c.t.d.TivoDownloadServiceApplication     : No active profile set, falling back to default profiles: default
-2020-05-01 01:40:54.555  INFO 26352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-01 01:40:54.562  INFO 26352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-01 01:40:54.564  INFO 26352 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-05-01 01:40:54.628  INFO 26352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-01 01:40:54.628  INFO 26352 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1051 ms
-2020-05-01 01:40:54.883  INFO 26352 --- [pool-1-thread-1] c.t.download.cache.DownloadStatusCache   : Download Record Cache is instantiated
-2020-05-01 01:40:54.894  INFO 26352 --- [main] c.t.d.service.impl.DownloadServiceImpl   : Running executor service
-2020-05-01 01:40:54.969  INFO 26352 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:40:54.973  INFO 26352 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:40:54.998  INFO 26352 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:40:55.024  INFO 26352 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:40:55.339  INFO 26352 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-05-01 01:40:55.413  INFO 26352 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2020-05-01 01:40:55.413  INFO 26352 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:40:55.414  INFO 26352 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2020-05-01 01:40:55.439  INFO 26352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-01 01:40:55.440  INFO 26352 --- [main] c.t.d.TivoDownloadServiceApplication     : Started TivoDownloadServiceApplication in 2.253 seconds (JVM running for 3.209)
-2020-05-01 01:41:14.473  INFO 26352 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-01 01:41:14.474  INFO 26352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-01 01:41:14.478  INFO 26352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2020-05-01 01:41:14.502 ERROR 26352 --- [http-nio-8080-exec-1] c.t.download.rest.TivoControllerAdvice   : Test Error
-
-com.tivo.download.exceptions.ServiceException: Test Error
-	at com.tivo.download.rest.SummaryPanelController.test(SummaryPanelController.java:34) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.0.BUILD-SNAPSHOT.jar:2.2.0.BUILD-SNAPSHOT]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
-
-2020-05-01 01:41:31.016  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-05-01 01:41:31.026  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2020-05-01 01:41:31.027  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2020-05-01 01:41:31.028  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2020-05-01 01:41:31.030  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
-2020-05-01 01:41:31.037  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
-2020-05-01 01:41:31.039  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
-2020-05-01 01:41:31.040  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
-2020-05-01 01:41:31.041  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.service.impl.DownloadServiceImpl   : Executor service has stopped
-2020-05-01 01:41:31.043  INFO 26352 --- [RMI TCP Connection(3)-127.0.0.1] c.t.d.s.impl.CacheControllerServiceImpl  : Scheduler is shutdown
+2020-05-11 00:44:09.194  INFO 7092 --- [pool-2-thread-1] c.t.d.p.FileAggregationProcessor         : [8ef2c767-3832-437d-bff8-7ca013ab0412] Run the FileAggregationProcessor
+2020-05-11 00:44:09.194  INFO 7092 --- [pool-2-thread-1] com.tivo.download.utils.GeneralUtils     : [8ef2c767-3832-437d-bff8-7ca013ab0412] Running command : [cmd,/c,C:/Users/Raheal/AppData/Local/Programs/Python/Python37-32/python.exe,TivoFileGenerator.py,C:/Users/Raheal/Documents/omega-files/8ef2c767-3832-437d-bff8-7ca013ab0412,null]
+2020-05-11 01:06:25.658  INFO 7092 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]

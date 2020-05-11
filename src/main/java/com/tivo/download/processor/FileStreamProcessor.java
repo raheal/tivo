@@ -49,7 +49,6 @@ public class FileStreamProcessor implements Processor{
 	@Override
 	public void setNextProcessor(Processor processor) {
 		this.processor = processor;
-		
 	}
 
 }

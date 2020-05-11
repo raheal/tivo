@@ -21,6 +21,7 @@ public class DownloadExecutor implements Runnable {
 	private String taskId;
 	
 	private DownloadConfigDto downloadConfigDto;
+
 	
 	public DownloadExecutor(final DownloadRequestDto request, final String taskId, final DownloadConfigDto downloadConfigDto) {
 		this.request = request;

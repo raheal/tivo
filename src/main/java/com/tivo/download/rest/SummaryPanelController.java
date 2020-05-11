@@ -3,6 +3,7 @@ package com.tivo.download.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import com.tivo.download.exceptions.ServiceException;
 import com.tivo.download.model.MediaFile;
 import com.tivo.download.service.ManagementService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/summary")
 public class SummaryPanelController {

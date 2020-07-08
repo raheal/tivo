@@ -71,6 +71,9 @@ public class DownloadStreamProcessor implements Processor{
 		if (!request.getIsStream()) {
 			return Arrays.asList(new String[] {"cmd", "/c", downloadConfigDto.getPythonInterpreterPath(), adapterDetail.getAdapterScript(), "\"" + request.getUrl() + "\"", request.getFileDownloadDirectory(), request.getOutputFileName()});
 		}
+		if (request.isResumeDownload()) {
+			prepareStartEndMarkersForResumingDownload(request);
+		}
 		return Arrays.asList(new String[] {"cmd", "/c" , downloadConfigDto.getPythonInterpreterPath(), adapterDetail.getAdapterScript(), "\"" + request.getUrl() + "\"", request.getFileDownloadDirectory(), String.valueOf(request.getStartFileNumber()), String.valueOf(request.getEndFileNumber()), String.valueOf(request.getIsStream())});
 	}
 	
@@ -87,6 +90,20 @@ public class DownloadStreamProcessor implements Processor{
 			}
 		}
 		return new AdapterDetail(adapterMapper.getDefaultAdapter());
+	}
+	
+	
+	/**
+	 * If the system is resuming a stream download, find the latest file downloaded (numerically named), and set the start and
+	 * end marks for resuming the download
+	 * @param request
+	 */
+	
+	private void prepareStartEndMarkersForResumingDownload(final DownloadRequestDto request) {
+		final Integer numberOfFiles = new File(request.getFileDownloadDirectory()).listFiles().length;
+		if(numberOfFiles > 1) {
+			request.setStartFileNumber(numberOfFiles - 1);
+		}
 	}
 
 }

@@ -62,6 +62,11 @@ public class DownloadExecutor implements Runnable {
 			case AGGREGATE_ONLY:
 				fileAggregationProcessor.process(request, downloadLoadConfig, taskId);
 				break;
+			case PROCESS_AND_AGGREGATE_ONLY:
+				fileStreamProcessor.process(request, downloadLoadConfig, taskId);
+				fileAggregationProcessor.process(request, downloadLoadConfig, taskId);
+				cleanupProcessor.process(request, downloadLoadConfig, taskId);
+				break;
 			default:
 				throw new ServiceException ("Unknown Processing plan : [" + request.getProcessingPlan() + "]");
 		}

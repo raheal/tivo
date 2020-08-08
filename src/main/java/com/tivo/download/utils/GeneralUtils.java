@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.tomcat.util.buf.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,6 @@ public class GeneralUtils {
 	
 	public static final String BLANK_LITERAL = "";
 	
-	
 	public static final DownloadStatusDto createDownloadStatusRecord(String taskId, Status status, String statusMessage, DownloadRequestDto request, String stage, String event) {
 		final DownloadStatusDto downloadStatus = new DownloadStatusDto();
 		downloadStatus.setId(taskId);
@@ -39,7 +38,6 @@ public class GeneralUtils {
 		DownloadStatusCache.getInstance().getCache().put(taskId, downloadStatus);
 		return downloadStatus;
 	}
-	
 	
 	public static ProcessResult runProcessBuilder(final List<String> cmdArguments, final String directory, final String taskId, final DownloadRequestDto request) throws IOException, InterruptedException {
 		LOGGER.info("[{}] Running command : [{}]", taskId, StringUtils.join(cmdArguments));
@@ -57,7 +55,5 @@ public class GeneralUtils {
 		}
 		return new ProcessResult(exitValue, processMessage);
 	}
-	
-	
 	
 }

@@ -31,5 +31,7 @@ public class DownloadRequestDto {
 	
 	private ProcessingPlan processingPlan;
 	
+	private boolean autoRestart;
+	
 	
 }

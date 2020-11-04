@@ -29,6 +29,8 @@ public class DownloadStreamProcessor implements Processor{
 	private Processor processor;
 	
 	private static final String PROCESSOR_NAME = "Downloading data";
+
+	private static final String PROCESSOR_NAME_AUTO_RESTART = "Auto-Restarting";
 	
 	private static final String EVENT_NAME = "event.service.tivo.download.stream";
 	
@@ -54,6 +56,13 @@ public class DownloadStreamProcessor implements Processor{
 					processor.process(request, downloadConfigDto, taskId);
 				}
 			} else {
+				if (request.getIsStream() && request.isAutoRestart()) {
+					// to restart the download and pick up from where it left off, set the 'resume' flag to true
+					GeneralUtils.createDownloadStatusRecord(taskId, Status.NOT_STARTED, GeneralUtils.BLANK_LITERAL, request, PROCESSOR_NAME_AUTO_RESTART, EVENT_NAME);
+					
+					request.setResumeDownload(true);
+					process(request, downloadConfigDto, taskId);
+				}
 				GeneralUtils.createDownloadStatusRecord(taskId, Status.ERROR, "Error code = 1", request, PROCESSOR_NAME, EVENT_NAME);
 			}
 		} catch(IOException | InterruptedException | ServiceException e) {
